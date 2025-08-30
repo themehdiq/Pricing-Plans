@@ -1,5 +1,140 @@
+/* START GLOBAL RULES */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(172, 218, 234);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgba(0, 0, 0, 0.715);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 45px 20px 0 20px;
+
+}
+
+
+/* Small Screens */
+@media (min-width: 768px) {
+    .container {
+        width: 800px;
+        height: 646px;
+    }
+}
+
+/* Medium Screens */
+@media (min-width: 992px) {
+    .container {
+        width: 1000px;
+    }
+}
+
+/* Large Screens */
+@media (min-width: 1200px) {
+    .container {
+        width: 1100px;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+/* END GLOBAL RULES */
+
+
+.container .plan {
+    flex-basis: calc(calc(100% / 3) - 20px);
+    background-color: white;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 35px;
+    border-radius: 10px;
+}
+
+@media (max-width: 767px) {
+    .container .plan {
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container .plan:first-child {
+        align-self: flex-start;
+    }
+
+    .container .plan:nth-child(2) {
+        align-self: center;
+    }
+
+    .container .plan:last-child {
+        align-self: flex-end;
+    }
+}
+
+
+.container .plan .price {
+    font-size: 55px;
+    position: relative;
+}
+
+
+
+.container .plan .price::after {
+    content: "$";
+    position: absolute;
+    top: -6%;
+    left: -20px;
+    font-size: 38px;
+}
+
+
+.container .plan .type {
+    display: block;
+    text-align: left;
+    padding: 10px 50px;
+    width: fit-content;
+    color: white;
+    font-size: 22px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin: 25px 0 35px 0;
+}
+
+.container .plan:first-child .type,
+.container .plan:first-child a {
+    background-color: #13c8a6;
+}
+
+.container .plan:nth-child(2) .type,
+.container .plan:nth-child(2) a {
+    background-color: #efcb53;
+}
+
+.container .plan:last-child .type,
+.container .plan:last-child a {
+    background-color: #555fae;
+}
+
+.container .plan p {
+    line-height: 2.5;
+    font-size: 17px;
+}
+
+.container .plan a {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    padding: 12px 25px;
+    margin: 20px 0 15px 0;
+    border-radius: 8px;
 }
