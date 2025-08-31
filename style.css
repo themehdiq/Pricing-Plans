@@ -24,7 +24,6 @@ body {
 @media (min-width: 768px) {
     .container {
         width: 800px;
-        height: 646px;
     }
 }
 
@@ -66,23 +65,27 @@ body {
     }
 }
 
+
 @media (min-width: 768px) {
     .container .plan:first-child {
-        align-self: flex-start;
+        position: relative;
+
     }
 
     .container .plan:nth-child(2) {
-        align-self: center;
+        position: relative;
+        top: 25px;
     }
 
     .container .plan:last-child {
-        align-self: flex-end;
+        position: relative;
+        top: 50px;
     }
 }
 
 
 .container .plan .price {
-    font-size: 55px;
+    font-size: 60px;
     position: relative;
 }
 
@@ -107,6 +110,30 @@ body {
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     margin: 25px 0 35px 0;
+    position: relative;
+    left: -8px;
+}
+
+.container .plan .type::after {
+    content: "";
+    position: absolute;
+    border-left: 0px solid transparent;
+    border-top: 7px solid transparent;
+    border-bottom: 0px solid transparent;
+    left: 0px;
+    top: -6px;
+}
+
+.container .plan:first-child .type::after {
+    border-right: 8px solid #10967d;
+}
+
+.container .plan:nth-child(2) .type::after {
+    border-right: 8px solid #a88e3a;
+}
+
+.container .plan:last-child .type::after {
+    border-right: 8px solid #424a86;
 }
 
 .container .plan:first-child .type,
@@ -127,6 +154,14 @@ body {
 .container .plan p {
     line-height: 2.5;
     font-size: 17px;
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+@media (max-width: 767px) {
+    .container .plan p {
+        font-size: 20px;
+    }
 }
 
 .container .plan a {
